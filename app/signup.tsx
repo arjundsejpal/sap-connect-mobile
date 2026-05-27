@@ -58,7 +58,7 @@ export default function SignupScreen() {
       'Check your email to confirm your account.'
     );
 
-    router.replace('/');
+    router.replace('/student/home');
   }
 
   return (

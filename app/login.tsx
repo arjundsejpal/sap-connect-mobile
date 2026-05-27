@@ -36,7 +36,7 @@ export default function LoginScreen() {
     }
 
     Alert.alert('Success', 'You are logged in.');
-    router.replace('/');
+    router.replace('/student/home');
   }
 
   return (
