@@ -1,4 +1,6 @@
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { AppButton } from './components/AppButton';
+import { colors } from './constants/colors';
 
 export default function App() {
   return (
@@ -14,25 +16,18 @@ export default function App() {
           Find opportunities, track hours, and support causes that matter.
         </Text>
 
-        <TouchableOpacity style={styles.primaryButton}>
-          <Text style={styles.primaryButtonText}>Get Started</Text>
-        </TouchableOpacity>
+        <AppButton title="Get Started" />
 
-        <TouchableOpacity style={styles.secondaryButton}>
-          <Text style={styles.secondaryButtonText}>I already have an account</Text>
-        </TouchableOpacity>
+        <View style={styles.spacing} />
+
+        <AppButton
+          title="I already have an account"
+          variant="secondary"
+        />
       </View>
     </SafeAreaView>
   );
 }
-
-const colors = {
-  background: '#F5F3EF',
-  text: '#121212',
-  accent: '#D46A6A',
-  muted: '#6B6B6B',
-  white: '#FFFFFF',
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -71,29 +66,7 @@ const styles = StyleSheet.create({
     maxWidth: 320,
   },
 
-  primaryButton: {
-    backgroundColor: colors.accent,
-    paddingVertical: 18,
-    borderRadius: 18,
-    alignItems: 'center',
-    marginBottom: 14,
-  },
-
-  primaryButtonText: {
-    color: colors.white,
-    fontSize: 17,
-    fontWeight: '700',
-  },
-
-  secondaryButton: {
-    paddingVertical: 18,
-    borderRadius: 18,
-    alignItems: 'center',
-  },
-
-  secondaryButtonText: {
-    color: colors.text,
-    fontSize: 16,
-    fontWeight: '600',
+  spacing: {
+    height: 14,
   },
 });
