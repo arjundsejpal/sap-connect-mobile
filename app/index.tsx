@@ -1,6 +1,7 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { AppButton } from '../components/AppButton';
 import { colors } from '../constants/colors';
+import { router } from 'expo-router';
 
 export default function WelcomeScreen() {
   return (
@@ -14,11 +15,18 @@ export default function WelcomeScreen() {
           Find opportunities, track hours, and support causes that matter.
         </Text>
 
-        <AppButton title="Get Started" />
+        <AppButton
+         title="Get Started"
+         onPress={() => router.push('/signup')} 
+        />
 
         <View style={styles.spacing} />
 
-        <AppButton title="I already have an account" variant="secondary" />
+        <AppButton 
+            title="I already have an account" 
+            variant="secondary"
+            onPress={() => router.push('/login')} 
+        />
       </View>
     </SafeAreaView>
   );
